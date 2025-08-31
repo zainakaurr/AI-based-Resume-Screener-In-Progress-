@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resume Analyzer</title>
+        <link rel = "stylesheet" href = "style.css">
+        <script src="app.js"></script>
+    </head>
+
+<body>
+    <!--Header starts here-->
+    <header>
+            <a class="logo">Resume Analyzer<span></span></a>
+            
+    </header>
+    <!--Header ends here-->
+        
+    <!-- dropbox starts here -->
+    <section class="dropbox" id="outerbox">
+        <div class="content">
+            <h3>Upload Resume</h3>
+            <input id="input" type="file" accept = ".pdf, .docx" style="cursor: pointer"/>
+        </div>   
+        
+        <div class = "JD">
+            <h3>Job Description</h3>
+            <textarea>Paste job description here</textarea>
+            <!-- Description box starts here -->
+            <div class="submit">
+               <button style="background-color: rgb(77, 0, 50); width:90px; height:40px; font-family: Arial; color: white; border-radius:8px; font-size: 18px; cursor: pointer;"><b>Submit</b></button>
+            </div>
+            <!-- Description box ends here -->
+        </div>
+    </section>
+    <!-- dropbox ends here -->
+
+
+    <!--Results section starts here-->
+    <section class="results" id="ResultsBox">
+        <!-- Circle chart starts here -->
+        <div class="percentSimilarity">
+            <svg class="percent-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                    <linearGradient id="GradientColor">
+                        <stop offset="0%" stop-color="#5f0034" />
+                        <stop offset="100%" stop-color="#FF008C" />
+                    </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+            </svg>
+            <div class="outer">
+                <div class="inner">
+                    <span class="number">0%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Circle chart ends here -->
+
+        <!-- Similarities section starts here -->
+        <div class="feedbackBox">
+            <h3 class="similarityStatement" style="padding:1rem; margin:0; background:#fbbed4; color:#333; border-radius:8px 8px 0 0; font-size: 20px; width: 600px">
+            Similarities
+            </h3>
+            <div class="whatThere" style="padding:1.5rem; font-size:15px; height: 600px; width: 600px; background-color: rgb(237, 223, 234)">
+            <p>Similarities between your resume and job description will be displayed here</p>
+            </div>
+        </div>
+        <!-- Similarities section ends here -->
+
+        <!-- Missing section starts here -->
+        <div class="Missing">
+            <div class="feedbackBox2">
+            <h3 class="missingStatement"style="padding:1rem; margin:0; background:#fbbed4; color:#333; border-radius:8px 8px 0 0; font-size: 20px; width: 600px">
+            What is missing from your resume
+            </h3>
+            <div class="whatMissing"style="padding:1.5rem; font-size:15px; height: 600px; width: 600px; background-color: rgb(237, 223, 234)">
+                <p>Differences between your resume and job description will be displayed here</p>
+            </div>
+        </div>
+        </div>
+        <!-- Missing section ends here -->
+
+    </section>
+    <!--Results section ends here-->
+</body>   
+</html>

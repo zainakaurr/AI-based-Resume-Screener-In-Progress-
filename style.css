@@ -1,0 +1,223 @@
+:root{
+    --pink: #e84393;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8rem;               /* define fixed height */
+    background: white;          /* solid so content is hidden under */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+header .logo{
+    font-size: 3rem;
+    color: #333;
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+.dropbox{
+    display:flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url('background.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-left: 9%;
+    padding-right: 9%;
+}
+
+.dropbox .content{
+    max-width: 50rem;
+}
+
+.dropbox .content h3{
+    font-size: 3rem;
+    color: #333;
+}
+
+.dropbox .content input{
+    font-size: 1.5rem;
+    color: var(--pink);
+    padding: 1rem;
+}
+
+.dropbox .JD{
+    flex: 1;
+    margin-left: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+.dropbox .JD h3{
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.dropbox .JD textarea{
+    flex: 1;
+    width: 100%;
+    min-height: 60vh;
+    resize: none !important;
+    font-size: 1.5rem;
+    color: black;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.dropbox .JD .submit{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.results{
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+    align-items:center;
+    margin-bottom: 10rem;
+}
+
+.results .percentSimilarity {
+    width: 160px;
+    height: 160px;
+    position: relative; 
+}
+
+.results .percentSimilarity .outer{
+    height: 160px;
+    width: 160px;
+    padding: 20px;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+
+    border-radius: 50%;
+}
+
+.results .percentSimilarity .outer .inner{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2), inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7), -0.5px -0.5px 0px rgba(0,0,0, 0.15), 0px 12px 10px -10px rgba(0,0,0,0.05);
+    
+}
+
+.results .percentSimilarity .outer .inner .number{
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+
+}
+
+circle{
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke-dasharray: 450;
+    stroke-dashoffset: 450;
+    animation: anim 2s linear forwards;
+}
+
+@keyframes anim{
+    100%{
+        dashoffset: 0;
+        /*  450 - (450*number/100)               */
+    }
+}
+
+.percent-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 160px;
+    z-index: 2; 
+    pointer-events: none; 
+}
+
+.result .feedbackBox{
+    position: relative;
+    width: 600px;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: auto;
+    background: #fafafa;
+    transition: all 0.4s ease;
+}
+
+@media (max-width: 900px){
+    .results{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 15%;
+    }
+
+    .results .percentSimilarity {
+        margin: 0 auto;
+    }
+    .result .feedbackBox {
+        width: 80%;
+        min-width: 0;
+        max-width: 80%;
+    }
+
+    .dropbox{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 15%;
+    }
+
+    .dropbox .JD{
+        width: 90%;
+        min-width: 0;
+        max-width: 90%;
+    }
+
+    .dropbox .content{
+        margin: 0 auto;
+    }
+}
+
