@@ -3,11 +3,6 @@
 
 }
 
-html {
-  overflow-x: auto;
-}
-
-
 *{
     margin:0;
     padding:0;
@@ -25,7 +20,7 @@ html{
     font-size: 62.5%;
     scroll-behavior: smooth;
     scroll-padding-top: 6rem;
-    overflow-x: hidden;
+    overflow-x: scroll;
 }
 
 section{
