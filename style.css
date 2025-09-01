@@ -3,6 +3,11 @@
 
 }
 
+html {
+  overflow-x: auto;
+}
+
+
 *{
     margin:0;
     padding:0;
@@ -220,5 +225,6 @@ circle{
         margin: 0 auto;
     }
 }
+
 
 
